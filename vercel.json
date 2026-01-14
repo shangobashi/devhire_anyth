@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "build/server/main/index.js", "use": "@vercel/node" },
+    { "src": "build/client/assets/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/assets/(.*)", "dest": "/build/client/assets/$1" },
+    { "src": "/(.*)", "dest": "/build/server/main/index.js" }
+  ]
+}

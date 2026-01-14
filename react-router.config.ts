@@ -5,4 +5,6 @@ export default {
   appDirectory: './src/app',
   ssr: true,
   presets: [vercelPreset()],
+  serverBuildFile: 'index.js',
+  serverBundles: () => 'main',
 } satisfies Config;
