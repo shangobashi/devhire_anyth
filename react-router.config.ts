@@ -5,5 +5,4 @@ export default {
   appDirectory: './src/app',
   ssr: true,
   presets: [vercelPreset()],
-  prerender: ['/*?'],
 } satisfies Config;
