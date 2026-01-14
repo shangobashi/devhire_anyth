@@ -7,4 +7,5 @@ export default {
   presets: [vercelPreset()],
   serverBuildFile: 'index.js',
   serverBundles: () => 'main',
+  serverModuleFormat: 'cjs',
 } satisfies Config;
