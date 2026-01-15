@@ -1,14 +1,15 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/ssr.cjs", "use": "@vercel/node" },
+    {
+      "src": "api/ssr.cjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "build/server/main/**"
+      }
+    },
     { "src": "build/client/assets/**", "use": "@vercel/static" }
   ],
-  "functions": {
-    "api/ssr.cjs": {
-      "includeFiles": "build/server/main/**"
-    }
-  },
   "routes": [
     { "handle": "filesystem" },
     { "src": "/assets/(.*)", "dest": "/build/client/assets/$1" },
