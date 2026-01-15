@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/ssr.cjs",
+      "src": "api/ssr.js",
       "use": "@vercel/node",
       "config": {
         "includeFiles": "build/server/main/**"
@@ -13,6 +13,6 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/assets/(.*)", "dest": "/build/client/assets/$1" },
-    { "src": "/(.*)", "dest": "/api/ssr.cjs" }
+    { "src": "/(.*)", "dest": "/api/ssr.js" }
   ]
 }

@@ -5,7 +5,6 @@ export default {
   appDirectory: './src/app',
   ssr: true,
   presets: [vercelPreset()],
-  serverBuildFile: 'index.cjs',
+  serverBuildFile: 'index.js',
   serverBundles: () => 'main',
-  serverModuleFormat: 'cjs',
 } satisfies Config;
