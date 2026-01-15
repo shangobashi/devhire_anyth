@@ -4,6 +4,11 @@
     { "src": "api/ssr.cjs", "use": "@vercel/node" },
     { "src": "build/client/assets/**", "use": "@vercel/static" }
   ],
+  "functions": {
+    "api/ssr.cjs": {
+      "includeFiles": "build/server/main/**"
+    }
+  },
   "routes": [
     { "handle": "filesystem" },
     { "src": "/assets/(.*)", "dest": "/build/client/assets/$1" },
